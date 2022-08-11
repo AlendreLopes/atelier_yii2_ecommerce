@@ -1,0 +1,2 @@
+suite_namespace: backend_ecommerce_partners\tests\unit
+actor: UnitTester

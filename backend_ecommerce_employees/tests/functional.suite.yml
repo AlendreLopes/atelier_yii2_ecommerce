@@ -1,0 +1,5 @@
+suite_namespace: backend_ecommerce_employees\tests\functional
+actor: FunctionalTester
+modules:
+    enabled:
+        - Yii2
