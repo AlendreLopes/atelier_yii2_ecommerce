@@ -1,0 +1,2 @@
+suite_namespace: backend_moisson\tests\unit
+actor: UnitTester

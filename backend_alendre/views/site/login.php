@@ -7,11 +7,11 @@
 use yii\bootstrap4\ActiveForm;
 use yii\bootstrap4\Html;
 
-$this->title = 'Login';
+$this->title = Yii::$app->name . ' Login';
 ?>
 <div class="site-login">
     <div class="mt-5 offset-lg-3 col-lg-6">
-        <h1><?= Html::encode($this->title) ?></h1>
+        <h1 class="text-center"><?= Html::encode($this->title) ?></h1>
 
         <p>Please fill out the following fields to login:</p>
 

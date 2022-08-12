@@ -10,6 +10,7 @@ return [
     'id' => 'app-frontend_atelier',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'name' => 'Alendre Atelier',
     'controllerNamespace' => 'frontend_atelier\controllers',
     'components' => [
         'request' => [

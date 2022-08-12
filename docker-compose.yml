@@ -46,11 +46,22 @@ services:
       # Mount source-code for development
       - ./:/app
 
+  backend_moisson:
+    build: backend_moisson
+    container_name: backend_moisson
+    ports:
+      - 20400:80
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+
   frontend_alendre:
     build: frontend_alendre
     container_name: frontend_alendre
     ports:
-      - 20400:80
+      - 20480:80
     volumes:
       # Re-use local composer cache via host-volume
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
@@ -61,7 +72,7 @@ services:
     build: frontend_atelier
     container_name: frontend_atelier
     ports:
-      - 20480:80
+      - 20540:80
     volumes:
       # Re-use local composer cache via host-volume
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
@@ -72,7 +83,18 @@ services:
     build: frontend_ecommerce
     container_name: frontend_ecommerce
     ports:
-      - 20540:80
+      - 20620:80
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+
+  frontend_moisson:
+    build: frontend_moisson
+    container_name: frontend_moisson
+    ports:
+      - 20700:80
     volumes:
       # Re-use local composer cache via host-volume
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
