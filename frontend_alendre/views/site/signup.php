@@ -1,35 +1,45 @@
 <?php
+/* @var $this yii\web\View */
+/* @var $form yii\bootstrap\ActiveForm */
+/* @var $model \app\models\SignupForm */
 
-/** @var yii\web\View $this */
-/** @var yii\bootstrap4\ActiveForm $form */
-/** @var \frontend_alendre\models\SignupForm $model */
+use kartik\password\PasswordInput;
+use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
 
-use yii\bootstrap4\Html;
-use yii\bootstrap4\ActiveForm;
-
-$this->title = 'Signup';
+$this->title = Yii::t('app', 'Signup');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-signup">
+
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to signup:</p>
+    <div class="col-md-5 well bs-component">
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+        <p><?= Yii::t('app', 'Please fill out the following fields to signup:') ?></p>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+        <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
-                <?= $form->field($model, 'email') ?>
+            <?= $form->field($model, 'username')->textInput(
+                ['placeholder' => Yii::t('app', 'Create your username'), 'autofocus' => true]) ?>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+            <?= $form->field($model, 'email')->input('email', ['placeholder' => Yii::t('app', 'Enter your e-mail')]) ?>
 
-                <div class="form-group">
-                    <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
-                </div>
+            <?= $form->field($model, 'password')->widget(PasswordInput::classname(), 
+                ['options' => ['placeholder' => Yii::t('app', 'Create your password')]]) ?>
 
-            <?php ActiveForm::end(); ?>
-        </div>
+            <div class="form-group">
+                <?= Html::submitButton(Yii::t('app', 'Signup'), 
+                    ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+            </div>
+
+        <?php ActiveForm::end(); ?>
+
+        <?php if ($model->scenario === 'rna'): ?>
+            <div style="color:#666;margin:1em 0">
+                <i>*<?= Yii::t('app', 'We will send you an email with account activation link.') ?></i>
+            </div>
+        <?php endif ?>
+
     </div>
 </div>

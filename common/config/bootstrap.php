@@ -5,8 +5,12 @@ Yii::setAlias('@backend_alendre', dirname(dirname(__DIR__)) . '/backend_alendre'
 Yii::setAlias('@backend_ecommerce', dirname(dirname(__DIR__)) . '/backend_ecommerce');
 Yii::setAlias('@backend_ecommerce_employees', dirname(dirname(__DIR__)) . '/backend_ecommerce_employees');
 Yii::setAlias('@backend_ecommerce_partners', dirname(dirname(__DIR__)) . '/backend_ecommerce_partners');
+Yii::setAlias('@backend_lalah', dirname(dirname(__DIR__)) . '/backend_lalah');
+Yii::setAlias('@backend_lalah_deliveries', dirname(dirname(__DIR__)) . '/backend_lalah_deliveries');
+Yii::setAlias('@backend_lalah_sales', dirname(dirname(__DIR__)) . '/backend_lalah_sales');
 Yii::setAlias('@backend_moisson', dirname(dirname(__DIR__)) . '/backend_moisson');
 Yii::setAlias('@frontend_alendre', dirname(dirname(__DIR__)) . '/frontend_alendre');
 Yii::setAlias('@frontend_atelier', dirname(dirname(__DIR__)) . '/frontend_atelier');
 Yii::setAlias('@frontend_ecommerce', dirname(dirname(__DIR__)) . '/frontend_ecommerce');
+Yii::setAlias('@frontend_lalah', dirname(dirname(__DIR__)) . '/frontend_lalah');
 Yii::setAlias('@frontend_moisson', dirname(dirname(__DIR__)) . '/frontend_moisson');

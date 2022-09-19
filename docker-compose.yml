@@ -46,11 +46,44 @@ services:
       # Mount source-code for development
       - ./:/app
 
+  backend_lalah:
+    build: backend_lalah
+    container_name: backend_lalah
+    ports:
+      - 20400:80
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+
+  backend_lalah_deliveries:
+    build: backend_lalah_deliveries
+    container_name: backend_lalah_deliveries
+    ports:
+      - 20480:80
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+
+  backend_lalah_sales:
+    build: backend_lalah_sales
+    container_name: backend_lalah_sales
+    ports:
+      - 20540:80
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+
   backend_moisson:
     build: backend_moisson
     container_name: backend_moisson
     ports:
-      - 20400:80
+      - 20620:80
     volumes:
       # Re-use local composer cache via host-volume
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
@@ -61,7 +94,7 @@ services:
     build: frontend_alendre
     container_name: frontend_alendre
     ports:
-      - 20480:80
+      - 20700:80
     volumes:
       # Re-use local composer cache via host-volume
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
@@ -72,7 +105,7 @@ services:
     build: frontend_atelier
     container_name: frontend_atelier
     ports:
-      - 20540:80
+      - 20780:80
     volumes:
       # Re-use local composer cache via host-volume
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
@@ -83,7 +116,18 @@ services:
     build: frontend_ecommerce
     container_name: frontend_ecommerce
     ports:
-      - 20620:80
+      - 20860:80
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+
+  frontend_lalah:
+    build: frontend_lalah
+    container_name: frontend_lalah
+    ports:
+      - 20940:80
     volumes:
       # Re-use local composer cache via host-volume
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
@@ -94,7 +138,7 @@ services:
     build: frontend_moisson
     container_name: frontend_moisson
     ports:
-      - 20700:80
+      - 21200:80
     volumes:
       # Re-use local composer cache via host-volume
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
